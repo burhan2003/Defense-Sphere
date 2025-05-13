@@ -1,0 +1,123 @@
+:root {
+    --primary-color: #4a0e78;
+    --secondary-color: #0d0f3d;
+    --accent-color: #00ffd5;
+    --text-color: #ffffff;
+    --text-color-light: #b3b3b3;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    min-height: 100vh;
+}
+
+.base-container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+header {
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+    transition: background-color 0.3s ease;
+}
+
+header.scrolled {
+    background-color: rgba(74, 14, 120, 0.9);
+    backdrop-filter: blur(10px);
+}
+
+.base-nav-content {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 20px 0;
+}
+
+.base-logo-image {
+    width: 40px;
+    height: auto;
+    margin-right: 10px;
+}
+
+.base-logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--accent-color);
+    text-decoration: none;
+}
+
+.base-nav-links {
+    margin-left: auto;
+    display: flex;
+    gap: 20px;
+}
+
+.base-nav-links a {
+    color: var(--text-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+    padding: 8px;
+}
+
+.base-nav-links a:hover {
+    color: var(--accent-color);
+}
+
+.base-cta-button {
+    background-color: var(--accent-color);
+    color: var(--secondary-color);
+    padding: 10px 20px;
+    border-radius: 15px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+#security-tips {
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 60px 0;
+}
+#cta {
+    text-align: center;
+}
+#testimonial {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+
+.base-cta-button:hover {
+    background-color: #00ccaa;
+}
+.base-footer-links,
+.base-social-media {
+    margin: 10px 0;
+}
+
+.base-footer-links a,
+.base-social-media a {
+    margin: 0 15px;
+    color: #007bff;
+    text-decoration: none;
+}
+
+.base-footer-links a:hover,
+.base-social-media a:hover {
+    text-decoration: underline;
+}
+footer {
+    background-color: rgba(0, 0, 0, 0.3);
+    text-align: center;
+    padding: 20px 0;
+}
