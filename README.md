@@ -58,7 +58,7 @@ Defense Sphere is a comprehensive cybersecurity framework designed to mitigate i
 ## Installation
 1. Clone the repository:
     ```bash
-    git clone https://github.com/your-username/defense-sphere.git
+    git clone https://github.com/burhan2003/defense-sphere.git
     ```
 2. Navigate to the project directory:
     ```bash
