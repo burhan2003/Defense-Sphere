@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='images/favicon.ico') }}">
+    <link rel="stylesheet" href="/static/transition.css">
+    <link rel="stylesheet" href="/static/facial-recognition.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="page-container">
+        <div class="login-container">
+            <div class="quote-section">
+                <div class="quote-content">
+                    <h2 class="quote-main">It takes 20 years to build a reputation and a few minutes of cyber-incident to ruin it.</h2>
+                    <p class="quote-text">-Stephane Nappo</p>
+                </div>
+            </div>
+            
+            <div class="login-section">
+                <div class="login-header">
+                    <h1>Login</h1>
+                    <p>Enter your UserID and Password to access your account</p>
+                </div>
+                
+                <form id="login-form" method="post">
+                    <div class="input-group">
+                        <input type="text" id="user-id" name="user-id" placeholder="User ID">
+                    </div>
+                    <div class="input-group password-group">
+                        <input type="password" id="password" name="password" placeholder="Password" required>
+                        <div class="toggle-password-container">
+                            <button type="button" class="toggle-password">
+                                <i class="fa-solid fa-eye"></i>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <button type="submit" id="sign-in-btn">Sign In</button>
+                </form>
+                <p id="forgot-password"><a href="/forgot-password">Forgot Password?</a></p>
+                <p class="signup-link" id="create-account">
+                    Don't have an account? <a href="/register" class="transition-link">Sign Up</a>
+                </p>
+            </div>
+        </div>
+    </div>
+    <!-- Updated facial recognition overlay with separate face and checkmark -->
+    <div id="facial-recognition-overlay" class="facial-recognition-overlay">
+        <div class="scan-container">
+            <div class="animation-container">
+                <!-- Face animation -->
+                <div id="face-animation" class="face-outline">
+                    <svg viewBox="0 0 200 200" width="200" height="200">
+                        <path class="face-path" d="M100,20 C140,20 170,50 170,100 C170,150 140,180 100,180 C60,180 30,150 30,100 C30,50 60,20 100,20 Z" fill="none" stroke-width="2"/>
+                        <path class="face-feature" d="M65,80 C70,75 80,75 85,80" fill="none" stroke-width="2"/>
+                        <path class="face-feature" d="M115,80 C120,75 130,75 135,80" fill="none" stroke-width="2"/>
+                        <path class="face-feature" d="M70,120 C80,130 120,130 130,120" fill="none" stroke-width="2"/>
+                        <rect class="scan-rect" x="30" y="20" width="140" height="5" fill="rgba(15, 255, 179, 0.5)"/>
+                    </svg>
+                </div>
+                
+                <!-- Checkmark animation (hidden by default) -->
+                <div id="checkmark-animation" class="checkmark-outline" style="display: none;">
+                    <svg viewBox="0 0 200 200" width="200" height="200">
+                        <circle class="checkmark-circle" cx="100" cy="100" r="80" fill="none" stroke-width="2"/>
+                        <path class="checkmark-path" d="M60,105 L90,135 L140,75" fill="none" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+            </div>
+            
+            <div class="scan-status">
+                <div id="scan-text" class="scan-text">Facial Recognition in Progress</div>
+                <div class="scan-dots">
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="static/login-page.js"></script>
+    <script src="/static/transition.js"></script>
+</body>
+</html>

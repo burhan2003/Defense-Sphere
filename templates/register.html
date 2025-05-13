@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Page</title>
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='images/favicon.ico') }}">
+    <link rel="stylesheet" href="/static/transition.css">
+    <link rel="stylesheet" href="/static/facial-recognition.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="page-container">
+        <div class="registration-container">
+            <div class="registration-section">
+                <div class="registration-header">
+                    <h1>Registration</h1>
+                </div>
+                <form id="register-form" method="post">
+                    <div class="input-group">
+                        <input type="text" id="first-name" name="first-name" placeholder="First Name" required>
+                    </div>
+                    <div class="input-group">
+                        <select id="job-role" name="job-role" required>
+                            <option value="" disabled selected>Select your job role</option>
+                            <option value="Software Developer / Engineer">Software Developer / Engineer</option>
+                            <option value="Data Analyst / Scientist">Data Analyst / Scientist</option>
+                            <option value="System Administrator">System Administrator</option>
+                            <option value="Network Engineer">Network Engineer</option>
+                            <option value="Cybersecurity Specialist">Cybersecurity Specialist</option>
+                            <option value="Project Manager">Project Manager</option>
+                            <option value="Product Manager">Product Manager</option>
+                            <option value="Quality Assurance (QA) Engineer">Quality Assurance (QA) Engineer</option>
+                            <option value="IT Support Specialist">IT Support Specialist</option>
+                            <option value="Business Analyst">Business Analyst</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <input type="username" id="username" name="username" placeholder="Username" required>
+                    </div>
+                    <div class="input-group password-group">
+                        <input type="password" id="password" name="password" placeholder="Password" required>
+                        <div class="toggle-password-container">
+                            <button type="button" class="toggle-password">
+                                <i class="fa-solid fa-eye"></i>
+                            </button>
+                        </div>
+                        <div id="strengthIndicator" class="strength-indicator"></div>
+                    </div>
+                    <button type="submit" id="register-btn">Create Your Account</button>
+                </form>
+                <div class="login-link">
+                    Already have an account? <a href="/login" class="transition-link">Sign In</a>
+                </div>
+            </div>
+            <div class="quote-section">
+                <div class="quote-content">
+                    <p class="quote-main">
+                        Security is not a product, but a process. It's not a destination, but a journey towards digital resilience.
+                    </p>
+                    <p class="quote-text">
+                        - Bruce Schneier
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Camera panel for face recognition -->
+    <div id="camera-panel" style="display: none;" class="camera-panel">
+        <div class="camera-container">
+            <h2>Face Recognition Setup</h2>
+            <video id="video" autoplay playsinline></video>
+            <canvas id="canvas" style="display: none;"></canvas>
+            <div class="camera-buttons">
+                <button id="capture-btn" class="camera-btn">Capture</button>
+                <button id="cancel-camera-btn" class="camera-btn cancel">Cancel</button>
+            </div>
+        </div>
+    </div>
+<!-- Add this right before the closing body tag -->
+<div id="facial-recognition-overlay" class="facial-recognition-overlay">
+    <div class="scan-container">
+        <div class="face-outline">
+            <svg viewBox="0 0 200 200" width="200" height="200">
+                <path class="face-path" d="M100,20 C140,20 170,50 170,100 C170,150 140,180 100,180 C60,180 30,150 30,100 C30,50 60,20 100,20 Z" fill="none" stroke-width="2"/>
+                <path class="face-feature" d="M65,80 C70,75 80,75 85,80" fill="none" stroke-width="2"/>
+                <path class="face-feature" d="M115,80 C120,75 130,75 135,80" fill="none" stroke-width="2"/>
+                <path class="face-feature" d="M70,120 C80,130 120,130 130,120" fill="none" stroke-width="2"/>
+                <rect class="scan-rect" x="30" y="20" width="140" height="5" fill="rgba(15, 255, 179, 0.5)"/>
+            </svg>
+        </div>
+        <div class="scan-status">
+            <div class="scan-text">Facial Recognition Setup</div>
+            <div class="scan-dots">
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+            </div>
+        </div>
+        <div class="scan-metrics">
+            <div class="metric">
+                <div class="metric-label">Capturing</div>
+                <div class="metric-bar">
+                    <div class="metric-progress"></div>
+                </div>
+            </div>
+            <div class="metric">
+                <div class="metric-label">Processing</div>
+                <div class="metric-bar">
+                    <div class="metric-progress"></div>
+                </div>
+            </div>
+            <div class="metric">
+                <div class="metric-label">Storing</div>
+                <div class="metric-bar">
+                    <div class="metric-progress"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    <script src="/static/register-page.js"></script>
+    <script src="/static/transition.js"></script>
+</body>
+</html>
+

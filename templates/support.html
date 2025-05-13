@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support - DefenseSphere</title>
+    <link rel="stylesheet" href="/static/support.css">
+    <link rel="icon" href="/static/images/favicon.ico" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+</head>
+<body>
+
+    <header id="main-header">
+        <nav class="container">
+            <div class="nav-content">
+                <div class="logo">
+                    <img src="/static/images/shieldLogo1.png" alt="DefenseSphere Logo" class="logo-icon" />
+                    <h1>DefenseSphere</h1>
+                </div>
+                <div class="nav-links">
+                    <a href="/">Home</a>
+                    <a href="/articles">Articles</a>
+                    <a href="/support">Support</a>
+                    <a href="/about-us" class="transition-link">About Us</a>
+                    <a href="/login" class="cta-button">Log in</a>
+                </div>
+                <button class="mobile-menu-toggle">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="3" y1="12" x2="21" y2="12"></line>
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <line x1="3" y1="18" x2="21" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero-section">
+            <div class="container">
+                <div class="hero-content">
+                    <h1>Your Security, Our Priority</h1>
+                    <p>How can we assist you today?</p>
+                    <form class="search-form">
+                        <div class="search-container">
+                            <input type="text" placeholder="Search for help topics...">
+                            <button type="submit">
+                                <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <circle cx="11" cy="11" r="8"></circle>
+                                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                                </svg>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+                <div class="hero-visual">
+                    <div class="glow-circle"></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="welcome-section">
+            <div class="container">
+                <h2>Welcome to DefenseSphere Support</h2>
+                <p>Explore our curated selection of topics and articles to find the answers you need.</p>
+            </div>
+        </section>
+
+        <section class="topics-section">
+            <div class="container">
+                <h2>Popular Support Topics</h2>
+                <div class="topics-grid">
+                    <div class="topic-card">
+                        <div class="topic-icon">
+                            <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                <polyline points="7 10 12 15 17 10"></polyline>
+                                <line x1="12" y1="15" x2="12" y2="3"></line>
+                            </svg>
+                        </div>
+                        <h3>Download & Install</h3>
+                        <p>Get started with DefenseSphere products</p>
+                        <a href="#download" class="topic-link">Learn More</a>
+                    </div>
+                    <div class="topic-card">
+                        <div class="topic-icon">
+                            <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect>
+                                <line x1="1" y1="10" x2="23" y2="10"></line>
+                            </svg>
+                        </div>
+                        <h3>Account & Billing</h3>
+                        <p>Manage your subscription and payments</p>
+                        <a href="#billing" class="topic-link">Learn More</a>
+                    </div>
+                    <div class="topic-card">
+                        <div class="topic-icon">
+                            <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path>
+                                <line x1="12" y1="9" x2="12" y2="13"></line>
+                                <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                            </svg>
+                        </div>
+                        <h3>Cyber Scams</h3>
+                        <p>Learn to identify and prevent online threats</p>
+                        <a href="#scams" class="topic-link">Learn More</a>
+                    </div>
+                    <div class="topic-card">
+                        <div class="topic-icon">
+                            <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+                                <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                            </svg>
+                        </div>
+                        <h3>Technical Support</h3>
+                        <p>Troubleshoot issues and optimize performance</p>
+                        <a href="#technical" class="topic-link">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="scam-alert-section">
+            <div class="container">
+                <div class="scam-content">
+                    <div class="scam-image">
+                        <img src="/static/images/PersonUsingComputer.jpg" alt="Person using computer">
+                    </div>
+                    <div class="scam-text">
+                        <h2>Stay Vigilant: Protect Yourself from Online Scams</h2>
+                        <p>At DefenseSphere, we're committed to your online safety. If you've encountered a potential scam or fallen victim to cybercrime, take action immediately. Learn about the latest threats and how to protect yourself.</p>
+                        <div class="scam-buttons">
+                            <a href="#report-scam" class="primary-button">Report a Scam</a>
+                            <a href="#scam-victim" class="secondary-button">Get Help: I'm a Victim</a>
+                        </div>
+                        <p class="small-text">By reporting scams, you help us improve our AI models and protect others. Read our <a href="#privacy" class="text-link">privacy notice</a> for more information on how we use this data.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="faq-section">
+            <div class="container">
+                <h2>Frequently Asked Questions</h2>
+                <div class="faq-grid">
+                    <div class="faq-item">
+                        <div class="faq-header">
+                            <h3>How do I update my DefenseSphere software?</h3>
+                            <div class="faq-icon">
+                                <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <line x1="12" y1="5" x2="12" y2="19"></line>
+                                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="faq-content">
+                            <p>To update your DefenseSphere software, open the application and navigate to Settings > Updates. Click on "Check for Updates" and follow the prompts to install the latest version.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-header">
+                            <h3>What should I do if I suspect my account has been compromised?</h3>
+                            <div class="faq-icon">
+                                <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <line x1="12" y1="5" x2="12" y2="19"></line>
+                                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="faq-content">
+                            <p>If you suspect your account has been compromised, immediately change your password, enable two-factor authentication if not already active, and contact our support team for a security review.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-header">
+                            <h3>How can I cancel my subscription?</h3>
+                            <div class="faq-icon">
+                                <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <line x1="12" y1="5" x2="12" y2="19"></line>
+                                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="faq-content">
+                            <p>To cancel your subscription, log in to your account, go to Billing & Subscriptions, and click on "Cancel Subscription." Follow the prompts to complete the cancellation process.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="help-section">
+            <div class="container">
+                <h2>Need More Help?</h2>
+                <p>If you couldn't find what you're looking for, our support team is here to assist you.</p>
+                <div class="help-buttons">
+                    <a href="/login" class="primary-button">Sign In for Personalized Help</a>
+                    <a href="#contact-support" class="secondary-button">Contact Our Support Team</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="/static/images/shieldLogo1.png" alt="DefenseSphere Logo" class="logo-icon-small" />
+                    <span>DefenseSphere</span>
+                </div>
+                <p class="copyright">&copy; 2024 DefenseSphere. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="/privacy-policy">Privacy Policy</a>
+                    <a href="/terms-of-service">Terms of Service</a>
+                    <a href="/contact">Contact Us</a>
+                </div>
+                <div class="social-media">
+                    <a href="https://www.facebook.com" target="_blank" aria-label="Facebook">
+                        <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+                    </a>
+                    <a href="https://www.twitter.com" target="_blank" aria-label="Twitter">
+                        <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg>
+                    </a>
+                    <a href="https://www.linkedin.com" target="_blank" aria-label="LinkedIn">
+                        <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/static/support.js"></script>
+</body>
+</html>
+

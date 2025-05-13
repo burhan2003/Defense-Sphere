@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Firewall Management - DefenseSphere</title>
+    <link rel="stylesheet" href="/static/base-dashboard.css">
+    <link rel="stylesheet" href="/static/firewall.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Custom cursor elements -->
+    <div class="cursor">
+        <div class="cursor-dot"></div>
+        <div class="cursor-outline"></div>
+    </div>
+    
+    <div class="dashboard-layout">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <svg class="logo-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <h1>DefenseSphere</h1>
+                </div>
+                <button class="mobile-menu-toggle">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="3" y1="12" x2="21" y2="12"></line>
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <line x1="3" y1="18" x2="21" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+            
+            <nav class="sidebar-nav">
+                <ul>
+                    <li>
+                        <a href="/dashboard">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="3" y="3" width="7" height="7"></rect>
+                                <rect x="14" y="3" width="7" height="7"></rect>
+                                <rect x="14" y="14" width="7" height="7"></rect>
+                                <rect x="3" y="14" width="7" height="7"></rect>
+                            </svg>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/password-gen">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                                <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                            </svg>
+                            <span>Password Generator</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/FI-Monitor">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                <polyline points="14 2 14 8 20 8"></polyline>
+                                <line x1="16" y1="13" x2="8" y2="13"></line>
+                                <line x1="16" y1="17" x2="8" y2="17"></line>
+                                <polyline points="10 9 9 9 8 9"></polyline>
+                            </svg>
+                            <span>File Integrity</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/phishing">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                <polyline points="22,6 12,13 2,6"></polyline>
+                            </svg>
+                            <span>Phishing Detector</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/logs">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                <polyline points="14 2 14 8 20 8"></polyline>
+                                <line x1="16" y1="13" x2="8" y2="13"></line>
+                                <line x1="16" y1="17" x2="8" y2="17"></line>
+                                <polyline points="10 9 9 9 8 9"></polyline>
+                            </svg>
+                            <span>Logs</span>
+                        </a>
+                    </li>
+                    <li class="active">
+                        <a href="/firewall">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                            </svg>
+                            <span>Firewall</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/articles">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path>
+                            </svg>
+                            <span>Articles</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            
+            <div class="sidebar-footer">
+                <div class="user-profile">
+                    <img src="/static/images/avatar/anonymous.png" alt="User Profile" class="user-avatar">
+                    <div class="user-info">
+                        <h4 id="user-name">Admin</h4>
+                        <p>System Administrator</p>
+                    </div>
+                </div>
+                <a class="logout-button" onclick="logout()">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+                        <polyline points="16 17 21 12 16 7"></polyline>
+                        <line x1="21" y1="12" x2="9" y2="12"></line>
+                    </svg>
+                    <span>Log Out</span>
+                </a>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="content-wrapper">
+            <div class="dashboard">
+                <div class="stats-container">
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                            </svg>
+                        </div>
+                        <div class="stat-content">
+                            <h2 id="firewallCount">0</h2>
+                            <p>Firewalls</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                <polyline points="14 2 14 8 20 8"></polyline>
+                                <line x1="16" y1="13" x2="8" y2="13"></line>
+                                <line x1="16" y1="17" x2="8" y2="17"></line>
+                                <polyline points="10 9 9 9 8 9"></polyline>
+                            </svg>
+                        </div>
+                        <div class="stat-content">
+                            <h2 id="policyCount">0</h2>
+                            <p>Policies</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="9" cy="7" r="4"></circle>
+                                <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                            </svg>
+                        </div>
+                        <div class="stat-content">
+                            <h2 id="userCount">0</h2>
+                            <p>Users</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="rules-container">
+                    <div class="rules-header">
+                        <h1>Firewall Rules</h1>
+                        <button class="add-rule-btn" onclick="showAddRuleModal()">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="12" y1="5" x2="12" y2="19"></line>
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                            </svg>
+                            Add Rule
+                        </button>
+                    </div>
+
+                    <div class="search-bar">
+                        <div class="search-input-wrapper">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="11" cy="11" r="8"></circle>
+                                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                            </svg>
+                            <input type="text" id="searchInput" placeholder="Search rules..." onkeyup="filterRules()">
+                        </div>
+                        <select id="statusFilter" onchange="filterRules()">
+                            <option value="all">All Status</option>
+                            <option value="enabled">Enabled</option>
+                            <option value="disabled">Disabled</option>
+                        </select>
+                    </div>
+
+                    <div class="rules-table">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Status</th>
+                                    <th>Rule Name</th>
+                                    <th>Direction</th>
+                                    <th>Local IP:Port</th>
+                                    <th>Remote IP:Port</th>
+                                    <th>Protocol</th>
+                                    <th>Manage</th>
+                                </tr>
+                            </thead>
+                            <tbody id="rulesTableBody">
+                                <!-- Table content will be populated by JavaScript -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Add Rule Modal -->
+            <div id="addRuleModal" class="modal">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h2>Add New Rule</h2>
+                        <button class="close-button" onclick="closeModal()">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="18" y1="6" x2="6" y2="18"></line>
+                                <line x1="6" y1="6" x2="18" y2="18"></line>
+                            </svg>
+                        </button>
+                    </div>
+                    <form id="addRuleForm">
+                        <div class="form-group">
+                            <label for="ruleName">Rule Name</label>
+                            <input type="text" id="ruleName" required>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="direction">Direction</label>
+                                <select id="direction" required>
+                                    <option value="in">Incoming</option>
+                                    <option value="out">Outgoing</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="action">Action</label>
+                                <select id="action" required>
+                                    <option value="Allow">Allow</option>
+                                    <option value="Block">Block</option>
+                                    <option value="Bypass">Bypass</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Local Connection</label>
+                            <div class="input-group">
+                                <div class="ip-group">
+                                    <label for="localIpAddress">IP Address</label>
+                                    <input type="text" id="localIpAddress" placeholder="e.g., 192.168.1.1">
+                                </div>
+                                <div class="port-group">
+                                    <label for="localPort">Port</label>
+                                    <input type="text" id="localPort" placeholder="e.g., 80">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Remote Connection</label>
+                            <div class="input-group">
+                                <div class="ip-group">
+                                    <label for="remoteIpAddress">IP Address</label>
+                                    <input type="text" id="remoteIpAddress" placeholder="e.g., 10.0.0.1">
+                                </div>
+                                <div class="port-group">
+                                    <label for="remotePort">Port</label>
+                                    <input type="text" id="remotePort" placeholder="e.g., 443">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="protocol">Protocol</label>
+                            <select id="protocol" required>
+                                <option value="tcp">TCP</option>
+                                <option value="udp">UDP</option>
+                            </select>
+                        </div>
+                        <div class="form-actions">
+                            <button type="button" class="cancel-btn" onclick="closeModal()">Cancel</button>
+                            <button type="submit" class="submit-btn">Create Rule</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="/static/base-dashboard.js"></script>
+    <script src="/static/firewall.js"></script>
+</body>
+</html>
+

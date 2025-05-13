@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DefenseSphere Dashboard</title>
+    <link rel="stylesheet" href="/static/dashboard.css">
+    <link rel="icon" href="/static/images/favicon.ico" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="dashboard-layout">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <svg class="logo-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <h1>DefenseSphere</h1>
+                </div>
+                <button class="mobile-menu-toggle" id="mobile-menu-toggle">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="3" y1="12" x2="21" y2="12"></line>
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <line x1="3" y1="18" x2="21" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+            
+            <nav class="sidebar-nav">
+                <ul>
+                    <li class="active">
+                        <a href="#dashboard">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="3" y="3" width="7" height="7"></rect>
+                                <rect x="14" y="3" width="7" height="7"></rect>
+                                <rect x="14" y="14" width="7" height="7"></rect>
+                                <rect x="3" y="14" width="7" height="7"></rect>
+                            </svg>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/password-gen">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                                <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                            </svg>
+                            <span>Password Generator</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/FI-Monitor">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                <polyline points="14 2 14 8 20 8"></polyline>
+                                <line x1="16" y1="13" x2="8" y2="13"></line>
+                                <line x1="16" y1="17" x2="8" y2="17"></line>
+                                <polyline points="10 9 9 9 8 9"></polyline>
+                            </svg>
+                            <span>File Integrity</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/phishing">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                <polyline points="22,6 12,13 2,6"></polyline>
+                            </svg>
+                            <span>Phishing Detector</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/logs">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                <polyline points="14 2 14 8 20 8"></polyline>
+                                <line x1="16" y1="13" x2="8" y2="13"></line>
+                                <line x1="16" y1="17" x2="8" y2="17"></line>
+                                <polyline points="10 9 9 9 8 9"></polyline>
+                            </svg>
+                            <span>Logs</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/firewall">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                            </svg>
+                            <span>Firewall</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/articles">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path>
+                            </svg>
+                            <span>Articles</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            
+            <div class="sidebar-footer">
+                <div class="user-profile">
+                    <img src="/static/images/avatar/anonymous.png" alt="User Profile" class="user-avatar">
+                    <div class="user-info">
+                        <h4 id="user-name">{{ name }}</h4>
+                        <p>{{ role }}</p>
+                    </div>
+                </div>
+                <a class="logout-button" onclick="logout()">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+                        <polyline points="16 17 21 12 16 7"></polyline>
+                        <line x1="21" y1="12" x2="9" y2="12"></line>
+                    </svg>
+                    <span>Log Out</span>
+                </a>
+            </div>
+        </aside>
+
+        <!-- Main content -->
+        <main class="main-content">
+            <header class="top-header">
+                <div class="header-left">
+                    <h2>Dashboard Overview</h2>
+                    <p class="date-display" id="current-date"></p>
+                </div>
+                <div class="header-right">
+                    <div class="search-container">
+                        <input type="text" placeholder="Search...">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                        </svg>
+                    </div>
+                    <button class="mobile-sidebar-toggle" id="sidebar-toggle">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                            <line x1="9" y1="3" x2="9" y2="21"></line>
+                        </svg>
+                    </button>
+                </div>
+            </header>
+
+            <div class="dashboard-content">
+                <!-- Welcome card -->
+                <div class="welcome-card">
+                    <div class="welcome-content">
+                        <div class="welcome-text">
+                            <h1>Welcome, <span id="welcome-name">{{ name }}</span></h1>
+                            <p>{{ role }}</p>
+                            <div class="user-id-container">
+                                <span>ID: {{ userid }}</span>
+                                <button class="copy-btn" id="copy-id-btn">
+                                    <svg class="copy-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                                        <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                        <img src="/static/images/avatar/anonymous.png" alt="User Profile" class="profile-picture">
+                    </div>
+                    <div class="quick-stats">
+                        <div class="quick-stat">
+                            <div class="quick-stat-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                                    <circle cx="9" cy="7" r="4"></circle>
+                                    <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                                    <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                                </svg>
+                            </div>
+                            <div class="quick-stat-info">
+                                <span class="quick-stat-value" id="todays-users">0</span>
+                                <span class="quick-stat-label">Active Users</span>
+                            </div>
+                        </div>
+                        <div class="quick-stat">
+                            <div class="quick-stat-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                                    <circle cx="8.5" cy="7" r="4"></circle>
+                                    <line x1="20" y1="8" x2="20" y2="14"></line>
+                                    <line x1="23" y1="11" x2="17" y2="11"></line>
+                                </svg>
+                            </div>
+                            <div class="quick-stat-info">
+                                <span class="quick-stat-value" id="new-clients">0</span>
+                                <span class="quick-stat-label">New Clients</span>
+                            </div>
+                        </div>
+                        <div class="quick-stat vpn-quick-stat" onclick="toggleVPN()">
+                            <div class="quick-stat-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                                </svg>
+                            </div>
+                            <div class="quick-stat-info">
+                                <div class="status-indicator">
+                                    <span class="status-dot"></span>
+                                    <span id="vpn" class="status-text">Not Connected</span>
+                                </div>
+                                <span id="uptime" class="uptime">Uptime: 00:00:00</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Stats container -->
+                <div class="stats-container">
+                    <div class="stat-card location-card">
+                        <div class="stat-card-header">
+                            <h3>Your Location</h3>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon>
+                            </svg>
+                        </div>
+                        <div class="stat-card-content">
+                            <div class="ip-address">
+                                <span class="label">IP Address:</span>
+                                <span id="ip" class="value">loading...</span>
+                            </div>
+                            <div class="location-details">
+                                <div class="location-item">
+                                    <span class="label">Country:</span>
+                                    <span id="user-country" class="value">Loading...</span>
+                                </div>
+                                <div class="location-item">
+                                    <span class="label">Region:</span>
+                                    <span id="user-region" class="value">Loading...</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="stat-card vpn-card" onclick="toggleVPN()">
+                        <div class="stat-card-header">
+                            <h3>VPN Status</h3>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                            </svg>
+                        </div>
+                        <div class="stat-card-content">
+                            <div class="vpn-status">
+                                <div class="status-indicator">
+                                    <span class="status-dot"></span>
+                                    <span id="vpn-card" class="status-text">Not Connected</span>
+                                </div>
+                                <p id="uptime-card" class="uptime">Uptime: 00:00:00</p>
+                            </div>
+                            <button class="vpn-toggle-btn">
+                                <span>Toggle VPN</span>
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M5 12h14"></path>
+                                    <path d="M12 5l7 7-7 7"></path>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tools grid -->
+                <h2 class="section-title">Security Tools</h2>
+                <div class="tools-grid">
+                    <a href="/password-gen" class="tool-card">
+                        <div class="tool-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                                <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                            </svg>
+                        </div>
+                        <div class="tool-content">
+                            <h3>Password Generator</h3>
+                            <p>Now protect your accounts with Strong Passwords</p>
+                        </div>
+                    </a>
+                    
+                    <a href="/FI-Monitor" class="tool-card">
+                        <div class="tool-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                <polyline points="14 2 14 8 20 8"></polyline>
+                                <line x1="16" y1="13" x2="8" y2="13"></line>
+                                <line x1="16" y1="17" x2="8" y2="17"></line>
+                                <polyline points="10 9 9 9 8 9"></polyline>
+                            </svg>
+                        </div>
+                        <div class="tool-content">
+                            <h3>File Integrity Monitoring</h3>
+                            <p>Manage and Edit files</p>
+                        </div>
+                    </a>
+                    
+                    <a href="/phishing" class="tool-card">
+                        <div class="tool-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                <polyline points="22,6 12,13 2,6"></polyline>
+                            </svg>
+                        </div>
+                        <div class="tool-content">
+                            <h3>Phishing Email Detector</h3>
+                            <p>Protect your machine from phishing attacks powered by AI and Machine Learning</p>
+                        </div>
+                    </a>
+                    
+                    <a href="/logs" class="tool-card">
+                        <div class="tool-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                <polyline points="14 2 14 8 20 8"></polyline>
+                                <line x1="16" y1="13" x2="8" y2="13"></line>
+                                <line x1="16" y1="17" x2="8" y2="17"></line>
+                                <polyline points="10 9 9 9 8 9"></polyline>
+                            </svg>
+                        </div>
+                        <div class="tool-content">
+                            <h3>Logs</h3>
+                            <p>Monitor daily occurring activities.</p>
+                        </div>
+                    </a>
+                    
+                    <a href="/firewall" class="tool-card">
+                        <div class="tool-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                            </svg>
+                        </div>
+                        <div class="tool-content">
+                            <h3>Firewall</h3>
+                            <p>Configure and Monitor Firewall protocols.</p>
+                        </div>
+                    </a>
+                    
+                    <a href="/articles" class="tool-card">
+                        <div class="tool-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path>
+                            </svg>
+                        </div>
+                        <div class="tool-content">
+                            <h3>Articles</h3>
+                            <p>Stay up-to-date with the latest news, blogs, and articles</p>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Validator tools -->
+                <h2 class="section-title">Validator Tools</h2>
+                <div class="validator-container">
+                    <div class="validator-tabs">
+                        <button class="validator-tab active" data-tab="0">Email Validator</button>
+                        <button class="validator-tab" data-tab="1">Phone Validator</button>
+                        <button class="validator-tab" data-tab="2">IBAN Validator</button>
+                    </div>
+                    
+                    <div class="validator-content">
+                        <!-- Email Validator -->
+                        <div class="validator-section active">
+                            <div class="validator-form">
+                                <div class="input-group">
+                                    <input type="email" id="emailInput" placeholder="Enter email address" class="validator-input">
+                                    <button onclick="validateEmail()" class="validate-btn">Validate</button>
+                                </div>
+                                <div id="emailResult" class="validator-result"></div>
+                            </div>
+                        </div>
+
+                        <!-- Phone Validator -->
+                        <div class="validator-section">
+                            <div class="validator-form">
+                                <div class="input-group phone-group">
+                                    <select id="countryCode" class="validator-input country-code">
+                                        <option value="+91" selected>+91 (IN)</option>
+                                        <option value="+1">+1 (US)</option>
+                                        <option value="+44">+44 (GB)</option>
+                                        <!-- Add more country codes as needed -->
+                                    </select>
+                                    <input type="tel" id="phoneInput" placeholder="Enter phone number" class="validator-input phone-input">
+                                    <button onclick="validatePhone()" class="validate-btn">Validate</button>
+                                </div>
+                                <div id="phoneResult" class="validator-result"></div>
+                            </div>
+                        </div>
+
+                        <!-- IBAN Validator -->
+                        <div class="validator-section">
+                            <div class="validator-form">
+                                <div class="input-group">
+                                    <input type="text" id="ibanInput" placeholder="Enter IBAN" class="validator-input">
+                                    <button onclick="validateIBAN()" class="validate-btn">Validate</button>
+                                </div>
+                                <div id="ibanResult" class="validator-result"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Notifications -->
+    <div id="vpn-popup" class="popup">
+        <div class="popup-content">
+            <div class="popup-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                </svg>
+            </div>
+            <div class="popup-text">
+                <p>Connecting VPN, please do not close Terminal.</p>
+                <p>To disconnect: Close Terminal</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="copy-notification" id="copyNotification">
+        <div class="notification-content">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                <polyline points="22 4 12 14.01 9 11.01"></polyline>
+            </svg>
+            <span>UserID copied successfully!</span>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="/static/dashboard.js"></script>
+    <script>
+        // Add event listeners for mobile menu toggle
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+            const sidebarToggle = document.getElementById('sidebar-toggle');
+            const sidebar = document.querySelector('.sidebar');
+            
+            if (mobileMenuToggle) {
+                mobileMenuToggle.addEventListener('click', function() {
+                    sidebar.classList.toggle('active');
+                });
+            }
+            
+            if (sidebarToggle) {
+                sidebarToggle.addEventListener('click', function() {
+                    sidebar.classList.toggle('active');
+                });
+            }
+            
+            // Set current date
+            const currentDate = document.getElementById('current-date');
+            if (currentDate) {
+                const now = new Date();
+                const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+                currentDate.textContent = now.toLocaleDateString('en-US', options);
+            }
+            
+            // Add tab switching functionality
+            const validatorTabs = document.querySelectorAll('.validator-tab');
+            const validatorSections = document.querySelectorAll('.validator-section');
+            
+            validatorTabs.forEach(tab => {
+                tab.addEventListener('click', function() {
+                    const tabIndex = this.getAttribute('data-tab');
+                    
+                    // Update active tab
+                    validatorTabs.forEach(t => t.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    // Show corresponding section
+                    validatorSections.forEach(section => section.classList.remove('active'));
+                    validatorSections[tabIndex].classList.add('active');
+                });
+            });
+            
+            // Sync VPN status between cards
+            const vpnElement = document.getElementById('vpn');
+            const vpnCardElement = document.getElementById('vpn-card');
+            const uptimeElement = document.getElementById('uptime');
+            const uptimeCardElement = document.getElementById('uptime-card');
+            
+            // Create a MutationObserver to watch for changes in the VPN status
+            if (vpnElement && vpnCardElement) {
+                const observer = new MutationObserver(function(mutations) {
+                    mutations.forEach(function(mutation) {
+                        if (mutation.type === 'characterData' || mutation.type === 'childList') {
+                            vpnCardElement.textContent = vpnElement.textContent;
+                            
+                            // Update status dot color
+                            const statusDots = document.querySelectorAll('.status-dot');
+                            const statusColor = vpnElement.textContent === 'Connected' ? 'var(--status-online)' : 'var(--status-offline)';
+                            
+                            statusDots.forEach(dot => {
+                                dot.style.backgroundColor = statusColor;
+                            });
+                        }
+                    });
+                });
+                
+                observer.observe(vpnElement, { characterData: true, childList: true, subtree: true });
+            }
+            
+            // Sync uptime between cards
+            if (uptimeElement && uptimeCardElement) {
+                const uptimeObserver = new MutationObserver(function(mutations) {
+                    mutations.forEach(function(mutation) {
+                        if (mutation.type === 'characterData' || mutation.type === 'childList') {
+                            uptimeCardElement.textContent = uptimeElement.textContent;
+                        }
+                    });
+                });
+                
+                uptimeObserver.observe(uptimeElement, { characterData: true, childList: true, subtree: true });
+            }
+        });
+    </script>
+</body>
+</html>
