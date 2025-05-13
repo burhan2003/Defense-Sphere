@@ -5,8 +5,6 @@ Defense Sphere is a comprehensive cybersecurity framework designed to mitigate i
 Visual Overview
 Home Page
 Defense Sphere Overview
-![image](https://github.com/user-attachments/assets/cb0b1037-1c3a-458c-9f79-9fd39c46d1e5)
-
 
 Admin Dashboard
 Defense Sphere Overview
